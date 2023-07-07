@@ -230,7 +230,7 @@ map.on("load", function () {
     lon = e.features[0].properties["longitude"];
 
     var pointCloudId = `tree${treeID}`;
-    var pointCloudFile = `data/pointCloudJSONs_ver2021/${treeID}.json`;
+    var pointCloudFile = `data/pointCloudJSONs/${treeID}.json`;
     if (map.getLayer(pointCloudId)) {
       return;
     }
@@ -435,7 +435,7 @@ function shadow(date, callback) {
   // console.log(`From shadow func current selected trees: ${selectedTreeIds}`);
   for (const tree_id of selectedTreeIds) {
     var pointCloudId = `tree${tree_id}`;
-    var pointCloudFile = `data/pointCloudJSONs_ver2021/${tree_id}.json`;
+    var pointCloudFile = `data/pointCloudJSONs/${tree_id}.json`;
     // console.log(pointCloudFile);
     var shadowId = `shadow${tree_id}`;
 
