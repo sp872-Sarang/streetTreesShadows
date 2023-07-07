@@ -1,3 +1,5 @@
+//data path modified
+
 mapboxgl.accessToken =
   "pk.eyJ1IjoiamdmOTQiLCJhIjoiY2thaXk2bjQzMDZvYzJ3cXoxeThnODU5NyJ9.o1ijddB0igPdlsWMw6iRVw";
 const { MapboxLayer, PointCloudLayer } = deck;
