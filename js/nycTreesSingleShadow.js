@@ -52,7 +52,7 @@ fetch("./data/building_foot_prints/borough_boundaries.geojson")
 const loadBuildingData = (borough) => {
   // load building data
   fetch(
-    `./data/building_foot_prints/packed_TF_${borough}_buildings_footprint.geojson`
+    `data/building_foot_prints/packed_TF_${borough}_buildings_footprint.geojson`
   )
     .then((response) => response.json())
     .then((data) => (buildings = data));
@@ -60,7 +60,7 @@ const loadBuildingData = (borough) => {
   // load mapRecource and map layer
   map.addSource("buildings", {
     type: "geojson",
-    data: `./data/building_foot_prints/packed_TF_${borough}_buildings_footprint.geojson`,
+    data: `data/building_foot_prints/packed_TF_${borough}_buildings_footprint.geojson`,
   });
 
   map.addLayer({
@@ -120,12 +120,12 @@ map.on("load", function () {
 
   map.addSource("trees", {
     type: "geojson",
-    data: "./data/tile987187.geojson",
+    data: "data/tile987187.geojson",
   });
 
   map.addSource("treespoly", {
     type: "geojson",
-    data: "./data/tile987187polygon.geojson",
+    data: "data/tile987187polygon.geojson",
   });
 
   map.addLayer({
