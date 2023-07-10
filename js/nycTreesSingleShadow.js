@@ -43,7 +43,7 @@ var shadowColor = "color";
 
 var boroughBoundaries;
 
-fetch("./data/building_foot_prints/borough_boundaries.geojson")
+fetch("../data/building_foot_prints/borough_boundaries.geojson")
   .then((response) => response.json())
   .then((data) => {
     boroughBoundaries = data;
@@ -52,7 +52,7 @@ fetch("./data/building_foot_prints/borough_boundaries.geojson")
 const loadBuildingData = (borough) => {
   // load building data
   fetch(
-    `data/building_foot_prints/packed_TF_${borough}_buildings_footprint.geojson`
+    `../data/building_foot_prints/packed_TF_${borough}_buildings_footprint.geojson`
   )
     .then((response) => response.json())
     .then((data) => (buildings = data));
@@ -60,7 +60,7 @@ const loadBuildingData = (borough) => {
   // load mapRecource and map layer
   map.addSource("buildings", {
     type: "geojson",
-    data: `data/building_foot_prints/packed_TF_${borough}_buildings_footprint.geojson`,
+    data: `../data/building_foot_prints/packed_TF_${borough}_buildings_footprint.geojson`,
   });
 
   map.addLayer({
@@ -120,12 +120,12 @@ map.on("load", function () {
 
   map.addSource("trees", {
     type: "geojson",
-    data: "data/tile987187.geojson",
+    data: "../data/tile987187.geojson",
   });
 
   map.addSource("treespoly", {
     type: "geojson",
-    data: "data/tile987187polygon.geojson",
+    data: "../data/tile987187polygon.geojson",
   });
 
   map.addLayer({
@@ -354,7 +354,7 @@ map.on("load", function () {
     lon = e.features[0].properties["longitude"];
 
     var pointCloudId = `tree${treeID}`;
-    var pointCloudFile = `data/pointCloudJSONs/${treeID}.json`;
+    var pointCloudFile = `../data/pointCloudJSONs/${treeID}.json`;
     if (map.getLayer(pointCloudId)) {
       return;
     }
@@ -566,7 +566,7 @@ function shadow(date, callback) {
   // console.log(`From shadow func current selected trees: ${selectedTreeIds}`);
   for (const tree_id of selectedTreeIds) {
     var pointCloudId = `tree${tree_id}`;
-    var pointCloudFile = `data/pointCloudJSONs/${tree_id}.json`;
+    var pointCloudFile = `../data/pointCloudJSONs/${tree_id}.json`;
     // console.log(pointCloudFile);
     var shadowId = `shadow${tree_id}`;
 
